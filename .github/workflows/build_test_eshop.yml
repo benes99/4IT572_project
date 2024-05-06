@@ -116,6 +116,9 @@ jobs:
           echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
           echo "aws_session_token = ${{ secrets.AWS_SESSION_TOKEN }}" >> ~/.aws/credentials
 
+      - name: List contents of ansible directory
+        run: ls -la ansible/
+
       - name: Run Ansible playbook
         run: ansible-playbook -i ansible/hosts ansible/playbook.yml
 
