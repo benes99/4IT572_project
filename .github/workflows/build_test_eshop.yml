@@ -104,7 +104,6 @@ jobs:
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Install Git, Docker, and Ansible
-        uses: actions/setup-node@v4.0.2
         run: |
           sudo yum install -y git docker
           sudo amazon-linux-extras install -y ansible2
