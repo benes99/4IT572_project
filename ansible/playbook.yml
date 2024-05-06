@@ -64,7 +64,7 @@
 
     - name: Fetch eshop from Git
       git:
-        repo: 'https://github.com/benes99/4IT572_docker.git'
+        repo: 'https://github.com/benes99/4IT572_project.git'
         dest: ./app
 
     - name: Build Eshop Docker image
