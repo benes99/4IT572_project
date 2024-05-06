@@ -1,6 +1,5 @@
 name: Build and test eshop workflow
 
-
 on:
   workflow_dispatch:
   push:
