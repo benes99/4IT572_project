@@ -115,97 +115,15 @@ jobs:
           echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
           echo "aws_session_token = ${{ secrets.AWS_SESSION_TOKEN }}" >> ~/.aws/credentials
 
-      - name: Deploy to EC2
-        hosts: localhost
-        gather_facts: no
-        vars:
-          access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
-          secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
-          session_token: "{{ lookup('env', 'AWS_SESSION_TOKEN') }}"
-
-        tasks:
-          - name: Launch EC2 Instance
-            ec2_instance:
-              instance_type: t3.medium
-              image_id: ami-051f8a213df8bc089
-              region: us-east-1
-              key_name: test
-              vpc_subnet_id: subnet-0d44c818b4376e0af
-              tags:
-                Name: Eshop
-              count: 1
-              network:
-                assign_public_ip: yes
-              wait: yes
-              security_group: eShop
-              aws_access_key: "{{ access_key }}"
-              aws_secret_key: "{{ secret_key }}"
-              security_token: "{{ session_token }}"
-            register: ec2_instance_result
-
-          - name: Add instance host to group
-            add_host:
-              hostname: "{{ item.public_ip_address }}"
-              groupname: launched
-            loop: "{{ ec2_instance_result.instances }}"
-
-          - name: Wait for SSH connection
-            delegate_to: "{{ item.public_dns_name }}"
-            wait_for_connection:
-              delay: 30
-              timeout: 300
-            loop: "{{ ec2_instance_result.instances }}"
-
-      - name: Configure EC2 Instances
-        hosts: launched
-        become: yes
-        gather_facts: no
-
-        tasks:
-          - name: Install Git and Docker
-            yum:
-              name:
-                - git
-                - docker
-              state: latest
-              update_cache: yes
-
-          - name: Start Docker service
-            service:
-              name: docker
-              state: started
-              enabled: yes
-
-          - name: Set proper rights to Docker service
-            shell: usermod -a -G docker ec2-user
-
-          - name: Fetch eshop from Git
-            git:
-              repo: 'https://github.com/benes99/4IT572_project.git'
-              dest: ./app
-
-          - name: Build Eshop Docker image
-            docker_image:
-              path: "./app"
-              name: "eshop"
-              tag: "latest"
-              state: present
-              source: build
-
-          - name: Run Eshop Docker container
-            docker_container:
-              name: "eshop"
-              image: "eshop:latest"
-              state: started
-              restart_policy: always
-              ports:
-                - "80:3000"
-
-          - name: Wait for eshop to run
-            wait_for:
-              port: 80
-              host: "{{ inventory_hostname }}"
-              timeout: 300
+      - name: Run Ansible playbook
+        uses: appleboy/ansible-action@v0.1.2
+        with:
+          playbook_path: ansible/playbook.yml
+          inventory_path: ansible/hosts
+          extra_vars: |
+            access_key={{ secrets.AWS_ACCESS_KEY_ID }}
+            secret_key={{ secrets.AWS_SECRET_ACCESS_KEY }}
+            session_token={{ secrets.AWS_SESSION_TOKEN }}
 
       - name: Cleanup AWS Credentials
         if: always()
