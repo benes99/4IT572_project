@@ -116,14 +116,9 @@ jobs:
           echo "aws_session_token = ${{ secrets.AWS_SESSION_TOKEN }}" >> ~/.aws/credentials
 
       - name: Run Ansible playbook
-        uses: appleboy/ansible-action@v0.1.2
+        uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
-          playbook_path: ansible/playbook.yml
-          inventory_path: ansible/hosts
-          extra_vars: |
-            access_key={{ secrets.AWS_ACCESS_KEY_ID }}
-            secret_key={{ secrets.AWS_SECRET_ACCESS_KEY }}
-            session_token={{ secrets.AWS_SESSION_TOKEN }}
+          playbookName: 'ansible/playbook.yml'
 
       - name: Cleanup AWS Credentials
         if: always()
