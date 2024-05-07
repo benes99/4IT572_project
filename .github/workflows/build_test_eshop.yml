@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4.1.1
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
-          
+
       - name: Setup NodeJS
         uses: actions/setup-node@v4.0.2
         with:
@@ -103,7 +103,16 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
-      - name: Connect to AWS
+      - name: Load Node modules and build folder
+        uses: actions/cache@v4.0.2
+        with:
+          path: |
+            ~/.npm
+            ./node_modules
+            ./build
+          key: ${{ runner.os }}--build-${{ github.run_id }}
+
+      - name: Connect to AWS and Deploy
         env:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOSTNAME: ${{ secrets.SSH_HOST }}
@@ -111,4 +120,8 @@ jobs:
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} 'echo "Connection successful"'
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} 'echo "Connection successful";
+          cd 4IT572_ansible;
+          git pull;
+          cd ansible;
+          ansible-playbook ec2_deploy.yml --ask-vault-pass --user ec2-user --key-file ../test.pem'
