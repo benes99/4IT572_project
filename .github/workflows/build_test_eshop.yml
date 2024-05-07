@@ -125,5 +125,3 @@ jobs:
           git pull;
           cd ansible;
           ansible-playbook ec2_deploy.yml --ask-vault-pass --user ec2-user --key-file ../test.pem'
-
-
