@@ -122,10 +122,9 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-            echo $ANSIBLE_VAULT_PASSWORD > .vault_pass.txt && chmod 600 .vault_pass.txt
+            export ANSIBLE_VAULT_PASSWORD=$(echo $ANSIBLE_VAULT_PASSWORD)
             cd 4IT572_ansible
             git pull
             cd ansible
-            ansible-playbook ec2_deploy.yml --vault-password-file .vault_pass.txt --user ec2-user --key-file ../test.pem
-            rm .vault_pass.txt
+            ansible-playbook ec2_deploy.yml --vault-password $ANSIBLE_VAULT_PASSWORD --user ec2-user --key-file ../test.pem
           '
