@@ -117,11 +117,15 @@ jobs:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOSTNAME: ${{ secrets.SSH_HOST }}
           USER_NAME: ${{ secrets.USER_NAME }}
+          ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} 'echo "Connection successful";
-          cd 4IT572_ansible;
-          git pull;
-          cd ansible;
-          ansible-playbook ec2_deploy.yml --ask-vault-pass --user ec2-user --key-file ../test.pem'
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            echo $ANSIBLE_VAULT_PASSWORD > .vault_pass.txt && chmod 600 .vault_pass.txt
+            cd 4IT572_ansible
+            git pull
+            cd ansible
+            ansible-playbook ec2_deploy.yml --vault-password-file .vault_pass.txt --user ec2-user --key-file ../test.pem
+            rm .vault_pass.txt
+          '
