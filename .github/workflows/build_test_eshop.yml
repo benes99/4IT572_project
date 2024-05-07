@@ -113,7 +113,6 @@ jobs:
           key: ${{ runner.os }}--build-${{ github.run_id }}
 
       - name: Connect to AWS
-        uses: actions/checkout@v2
         env:
           PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOSTNAME: ${{ secrets.SSH_HOST }}
