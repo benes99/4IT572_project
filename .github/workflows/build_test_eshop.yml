@@ -94,35 +94,21 @@ jobs:
 
   Deploy:
     needs: [ Build, Test ]
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Code checkout
+        uses: actions/checkout@v4.1.1
         with:
-          python-version: '3.x'
+          token: ${{ secrets.WORKFLOW_TOKEN }}
 
-      - name: Install Ansible and dependencies
+      - name: Connect to AWS
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{ secrets.SSH_HOST }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+
         run: |
-          python -m pip install --upgrade pip
-          pip install ansible boto3
-
-      - name: Configure AWS credentials
-        run: |
-          mkdir -p ~/.aws
-          echo "[default]" > ~/.aws/credentials
-          echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY }}" >> ~/.aws/credentials
-          echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
-          echo "aws_session_token = ${{ secrets.AWS_SESSION_TOKEN }}" >> ~/.aws/credentials
-
-      - name: List contents of ansible directory
-        run: ls -la 
-
-      - name: Run Ansible playbook
-        uses: saubermacherag/ansible-playbook-docker-action@v1.4
-        with:
-          playbookName: 'ansible/playbook.yml'
-
-      - name: Cleanup AWS Credentials
-        if: always()
-        run: rm -rf ~/.aws
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
