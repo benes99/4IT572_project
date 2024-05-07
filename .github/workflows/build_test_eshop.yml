@@ -127,5 +127,5 @@ jobs:
             cd ansible
             echo $ANSIBLE_VAULT_PASSWORD > .vault_pass.txt && chmod 600 .vault_pass.txt
             ansible-playbook ec2_deploy.yml --vault-password-file .vault_pass.txt --user ec2-user --key-file ../test.pem
-            rm .vault_pass.txt
+
           '
