@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745e3592-adfc-4d4a-b7aa-262b26f5d162" name="Changes" comment="test branch">
+    <list default="true" id="745e3592-adfc-4d4a-b7aa-262b26f5d162" name="Changes" comment="AWS start instance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +19,27 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;benes99&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4d1a3df3-37ab-4129-8d9d-b15ff10540f2" />
+        <option name="url" value="https://github.com/benes99/4IT572_project.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.github/workflows/build_test_eshop.yml" root0="FORCE_HIGHLIGHTING" />
@@ -35,20 +56,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/dominik/Documents/School/4IT572_project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dominik/Documents/School/4IT572_project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -66,7 +87,11 @@
       <updated>1714984522136</updated>
       <workItem from="1714984523167" duration="745000" />
       <workItem from="1714985299970" duration="40000" />
-      <workItem from="1714985348066" duration="1677000" />
+      <workItem from="1714985348066" duration="9121000" />
+      <workItem from="1715004739558" duration="3075000" />
+      <workItem from="1715070781874" duration="1616000" />
+      <workItem from="1715073963240" duration="5820000" />
+      <workItem from="1715247870551" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="first commint">
       <option name="closed" value="true" />
@@ -108,7 +133,223 @@
       <option name="project" value="LOCAL" />
       <updated>1714987326181</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test branch">
+      <option name="closed" value="true" />
+      <created>1714987551644</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714987551644</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test branch">
+      <option name="closed" value="true" />
+      <created>1714987800916</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714987800916</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test branch">
+      <option name="closed" value="true" />
+      <created>1714988034221</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714988034221</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test branch final">
+      <option name="closed" value="true" />
+      <created>1714988148655</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714988148655</updated>
+    </task>
+    <task id="LOCAL-00010" summary="testing pull">
+      <option name="closed" value="true" />
+      <created>1714988409705</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714988409705</updated>
+    </task>
+    <task id="LOCAL-00011" summary="testing pull">
+      <option name="closed" value="true" />
+      <created>1714988486774</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714988486774</updated>
+    </task>
+    <task id="LOCAL-00012" summary="testing pull">
+      <option name="closed" value="true" />
+      <created>1714994713349</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714994713349</updated>
+    </task>
+    <task id="LOCAL-00013" summary="testing pull">
+      <option name="closed" value="true" />
+      <created>1714994937510</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714994937510</updated>
+    </task>
+    <task id="LOCAL-00014" summary="adding AWS">
+      <option name="closed" value="true" />
+      <created>1714996193195</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714996193195</updated>
+    </task>
+    <task id="LOCAL-00015" summary="adding AWS">
+      <option name="closed" value="true" />
+      <created>1714996291570</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714996291570</updated>
+    </task>
+    <task id="LOCAL-00016" summary="adding AWS">
+      <option name="closed" value="true" />
+      <created>1714996837018</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714996837018</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1714998869243</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1714998869243</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1715006119933</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715006119933</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1715006278156</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715006278156</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1715006740824</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715006740824</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1715074961552</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715074961552</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixing">
+      <option name="closed" value="true" />
+      <created>1715075044008</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715075044008</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Connect to AWS and Deploy">
+      <option name="closed" value="true" />
+      <created>1715075928006</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715075928006</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fix AWS">
+      <option name="closed" value="true" />
+      <created>1715076166063</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715076166063</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added vault pass">
+      <option name="closed" value="true" />
+      <created>1715076600318</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715076600318</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added vault pass">
+      <option name="closed" value="true" />
+      <created>1715076630726</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715076630726</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Vault pass fix">
+      <option name="closed" value="true" />
+      <created>1715076879727</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715076879727</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Vault pass fix">
+      <option name="closed" value="true" />
+      <created>1715077175304</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1715077175304</updated>
+    </task>
+    <task id="LOCAL-00029" summary="test pass vault">
+      <option name="closed" value="true" />
+      <created>1715077513640</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1715077513640</updated>
+    </task>
+    <task id="LOCAL-00030" summary="test pass vault">
+      <option name="closed" value="true" />
+      <created>1715077896970</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1715077896970</updated>
+    </task>
+    <task id="LOCAL-00031" summary="AWS start instance">
+      <option name="closed" value="true" />
+      <created>1715078270345</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1715078270345</updated>
+    </task>
+    <task id="LOCAL-00032" summary="AWS start instance">
+      <option name="closed" value="true" />
+      <created>1715078590246</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1715078590246</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +372,16 @@
     <MESSAGE value="yml - workflow to main" />
     <MESSAGE value="fix package-lock.json" />
     <MESSAGE value="test branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="test branch" />
+    <MESSAGE value="test branch final" />
+    <MESSAGE value="testing pull" />
+    <MESSAGE value="adding AWS" />
+    <MESSAGE value="fixing" />
+    <MESSAGE value="Connect to AWS and Deploy" />
+    <MESSAGE value="Fix AWS" />
+    <MESSAGE value="Added vault pass" />
+    <MESSAGE value="Vault pass fix" />
+    <MESSAGE value="test pass vault" />
+    <MESSAGE value="AWS start instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="AWS start instance" />
   </component>
 </project>
